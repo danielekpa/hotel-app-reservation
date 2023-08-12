@@ -1,0 +1,28 @@
+{
+  "reservations": [
+    {
+      "checkInDate": "2023-08-11",
+      "checkOutDate": "2023-08-11",
+      "guestName": "Daniel Ekpa",
+      "guestEmail": "daniel@gmail.com",
+      "roomNumber": 14,
+      "id": "1691757251886"
+    },
+    {
+      "checkInDate": "2023-08-12",
+      "checkOutDate": "2023-08-12",
+      "guestName": "Aisha Bella",
+      "guestEmail": "bello@gmail.com",
+      "roomNumber": 1,
+      "id": "1691809486889"
+    },
+    {
+      "checkInDate": "2023-08-12",
+      "checkOutDate": "2023-08-12",
+      "guestName": "Izy B",
+      "guestEmail": "izyb@gmail.com",
+      "roomNumber": 5,
+      "id": "1691809824379"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<app-home />
+
+<hr>
+
+<h3 class="mt-5 mb-3">Create a new reservation</h3>
+
+<div *ngIf="existingReservation; else noExistingReservation">
+  <form action="" [formGroup]="reservationForm" (ngSubmit)="onSubMit()">
+
+    <div class="row mb-3">
+
+      <div class="col ">
+        <label class="form-label">Check-In Date: </label>
+        <input class="form-control" type="date" formControlName="checkInDate">
+        <div *ngIf="reservationForm.get('checkInDate')?.invalid && reservationForm.get('checkInDate')?.touched">
+        </div>
+      </div>
+
+      <div class="col ">
+        <label class="form-label">Check-Out Date: </label>
+        <input class="form-control" type="date" formControlName="checkOutDate">
+        <div *ngIf="reservationForm.get('checkOutDate')?.invalid && reservationForm.get('checkOutDate')?.touched">
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col">
+        <label class="form-label">Guest Name: </label>
+        <input class="form-control" type="text" formControlName="guestName">
+        <div *ngIf="reservationForm.get('guestName')?.invalid && reservationForm.get('guestName')?.touched">
+        </div>
+      </div>
+
+      <div class="col">
+        <label class="form-label">Guest Email: </label>
+        <input class="form-control" type="email" formControlName="guestEmail">
+        <div *ngIf="reservationForm.get('guestEmail')?.invalid && reservationForm.get('guestEmail')?.touched">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-3 ">
+        <label class="form-label">Room Number: </label>
+        <input class="form-control" type="number" formControlName="roomNumber">
+
+        <div *ngIf="reservationForm.get('roomNumber')?.invalid && reservationForm.get('roomNumber')?.touched">
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary " type="submit" [disabled]="reservationForm.invalid">Submit</button>
+  </form>
+</div>
+
+
+<ng-template #noExistingReservation>
+  <p>No reservation with this id</p>
+
+  <button (click)="goBackToPrevPage()">Go back</button>
+</ng-template>
